@@ -198,7 +198,7 @@ pry(main)> jeffco_fair.draw_lottery_winner(ferris_wheel)
 #If no contestants are eligible for the lottery, nil is returned.
 
 pry(main)> jeffco_fair.announce_lottery_winner(scrambler)
-#=> "Bob has won the IMAX exhibit"
+#=> "Bob has won the Scramber ride"
 
 #We realize that, in this setup, Bob is not interested in the scrambler.  However, in your test, the result should match exactly.  You will need to stub the return of `draw_lottery_winner` as the above method should depend on that method :)
 
