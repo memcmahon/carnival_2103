@@ -175,7 +175,7 @@ pry(main)> jeffco_fair.admit(johnny)
 pry(main)> jeffco_fair.attendees
 #=> [#<Attendee:0x00007ffab70bfce8...>, #<Attendee:0x00007ffab69069e8...>, #<Attendee:0x00007ffab7172d70...>]
 
-#Attendees are added even if they don't have enough money for all/any exhibits.
+#Attendees are added even if they don't have enough money for all/any rides.
 
 pry(main)> jeffco_fair.attendees_by_ride_interest
 #=> {
