@@ -11,6 +11,10 @@ class Carnival
     @rides << ride
   end
 
+  def admit(attendee)
+    @attendees << attendee
+  end
+
   def recommend_rides(attendee)
     # interested_rides = []
     # #iterate over @rides
