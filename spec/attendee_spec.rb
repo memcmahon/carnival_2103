@@ -22,4 +22,15 @@ RSpec.describe Attendee do
       expect(attendee.interests).to eq([])
     end
   end
+
+  describe 'methods' do
+    it '#add_interest' do
+      attendee = Attendee.new('Bob', 20)
+
+      attendee.add_interest('Bumper Cars')
+      attendee.add_interest('Ferris Wheel')
+
+      expect(attendee.interests).to eq(["Bumper Cars", "Ferris Wheel"])
+    end
+  end
 end
