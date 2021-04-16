@@ -23,6 +23,12 @@ RSpec.describe Carnival do
 
       expect(jeffco_fair.rides).to eq([])
     end
+
+    it 'starts with no attendees' do
+      jeffco_fair = Carnival.new("Jefferson County Fair")
+
+      expect(jeffco_fair.attendees).to eq([])
+    end
   end
 
   describe 'methods' do
