@@ -151,9 +151,10 @@ RSpec.describe Carnival do
       jeffco_fair.admit(sally)
       jeffco_fair.admit(johnny)
 
-      expect(jeffco_fair.draw_lottery_winner(bumper_cars)).to be_an_instance_of(String)
-      expect(["Johnny", "Bob"].include?(jeffco_fair.draw_lottery_winner(bumper_cars))).to eq(true)
+      # expect(jeffco_fair.draw_lottery_winner(bumper_cars)).to be_an_instance_of(String)
+      # expect(["Johnny", "Bob"].include?(jeffco_fair.draw_lottery_winner(bumper_cars))).to eq(true)
       expect(jeffco_fair.draw_lottery_winner(bumper_cars)).to eq("Bob").or eq("Johnny")
+      expect(jeffco_fair.draw_lottery_winner(scrambler)).to eq(nil)
     end
   end
 end
