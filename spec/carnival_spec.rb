@@ -4,6 +4,7 @@ require './lib/attendee'
 require './lib/carnival'
 require 'pry'
 
+
 RSpec.describe Carnival do
   describe 'instantiation' do
     it '::new' do
@@ -179,7 +180,9 @@ RSpec.describe Carnival do
 
       expect(jeffco_fair.announce_lottery_winner(scrambler)).to eq("No winners for this lottery")
 
-      jeffco_fair.stub(:draw_lottery_winner).and_return("Bob")
+      # jeffco_fair.stub(:draw_lottery_winner).and_return("Bob")
+      allow(jeffco_fair).to receive(:draw_lottery_winner).and_return("Bob")
+      # allow(jeffco_fair).to receive(:draw_lottery_winner) { "Bob" }
 
       expect(jeffco_fair.announce_lottery_winner(scrambler)).to eq('Bob has won the Scrambler ride')
     end
