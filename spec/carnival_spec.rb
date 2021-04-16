@@ -177,6 +177,8 @@ RSpec.describe Carnival do
       jeffco_fair.admit(sally)
       jeffco_fair.admit(johnny)
 
+      expect(jeffco_fair.announce_lottery_winner(scrambler)).to eq("No winners for this lottery")
+
       jeffco_fair.stub(:draw_lottery_winner).and_return("Bob")
 
       expect(jeffco_fair.announce_lottery_winner(scrambler)).to eq('Bob has won the Scrambler ride')
