@@ -102,6 +102,8 @@ RSpec.describe Carnival do
         scrambler => []
       }
 
+      # binding.pry
+
       expect(jeffco_fair.attendees_by_ride_interest).to eq(expected)
     end
   end
