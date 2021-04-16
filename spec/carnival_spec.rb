@@ -127,8 +127,8 @@ RSpec.describe Carnival do
       jeffco_fair.admit(sally)
       jeffco_fair.admit(johnny)
 
-      exect(jeffco_fair.ticket_lottery_contestants(bumper_cars)).to eq([bob, johnny])
-      exect(jeffco_fair.ticket_lottery_contestants(scrambler)).to eq([])
+      expect(jeffco_fair.ticket_lottery_contestants(bumper_cars)).to eq([bob, johnny])
+      expect(jeffco_fair.ticket_lottery_contestants(scrambler)).to eq([])
     end
   end
 end
