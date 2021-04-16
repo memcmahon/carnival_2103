@@ -65,6 +65,19 @@ RSpec.describe Carnival do
 
     it '#admit' do
       jeffco_fair = Carnival.new("Jefferson County Fair")
+      bob = Attendee.new("Bob", 0)
+      sally = Attendee.new('Sally', 20)
+      johnny = Attendee.new("Johnny", 5)
+
+      jeffco_fair.admit(bob)
+      jeffco_fair.admit(sally)
+      jeffco_fair.admit(johnny)
+
+      expect(jeffco_fair.attendees).to eq([bob, sally, johnny])
+    end
+
+    it '#attendees_by_ride_interest' do
+      jeffco_fair = Carnival.new("Jefferson County Fair")
       ferris_wheel = Ride.new({name: 'Ferris Wheel', cost: 0})
       bumper_cars = Ride.new({name: 'Bumper Cars', cost: 10})
       scrambler = Ride.new({name: 'Scrambler', cost: 15})
@@ -83,7 +96,13 @@ RSpec.describe Carnival do
       jeffco_fair.admit(sally)
       jeffco_fair.admit(johnny)
 
-      expect(jeffco_fair.attendees).to eq([bob, sally, johnny])
+      expected = {
+        ferris_wheel => [bob],
+        bumper_cars => [bob, sally, johnny],
+        scrambler => []
+      }
+
+      expect(jeffco_fair.attendees_by_ride_interest).to eq(expected)
     end
   end
 end
